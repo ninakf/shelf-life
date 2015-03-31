@@ -1,0 +1,14 @@
+<h2>Welcome</h2>
+
+<h4>Shelves</h4>
+<% @shelves.each do |shelf| %> 
+	<%= link_to shelf.shelf_name %><br>
+<% end %><br>
+
+<button>
+<%= link_to "Add Shelf", new_shelf_path %>
+</button>
+
+<button>
+<%= link_to "Add Book", new_book_path %>
+</button>
