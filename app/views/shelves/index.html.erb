@@ -2,7 +2,7 @@
 
 <h4>Shelves</h4>
 <% @shelves.each do |shelf| %> 
-	<%= link_to shelf.shelf_name %><br>
+	<%= link_to shelf.shelf_name, shelf_path(shelf) %><br>
 <% end %><br>
 
 <button>
