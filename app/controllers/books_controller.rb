@@ -1,9 +1,8 @@
 class BooksController < ApplicationController
-	def index
-	end
-	
+
 	def new
 		@book = Book.new
+		@shelves = current_user.shelves
 	end
 
 	def create 
