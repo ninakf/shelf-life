@@ -1,4 +1,6 @@
 <h2><%= @shelf.shelf_name %></h2>
 <p><%= @shelf.description %></p>
-<p>HERE'S WHERE THE BOOKS WILL BE</p>
+<% @books.each do |book| %> 
+	<%= book.book_name %><br>
+<% end %><br>
 <button><%= link_to "Go Back", root_path %></button>
