@@ -11,17 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150330181002) do
-
-  create_table "book_shelves", force: :cascade do |t|
-    t.integer  "book_id"
-    t.integer  "shelf_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
-  add_index "book_shelves", ["book_id"], name: "index_book_shelves_on_book_id"
-  add_index "book_shelves", ["shelf_id"], name: "index_book_shelves_on_shelf_id"
+ActiveRecord::Schema.define(version: 20150402145916) do
 
   create_table "books", force: :cascade do |t|
     t.string   "book_name"
@@ -30,6 +20,16 @@ ActiveRecord::Schema.define(version: 20150330181002) do
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
   end
+
+  create_table "books_shelves", force: :cascade do |t|
+    t.integer  "book_id"
+    t.integer  "shelf_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_index "books_shelves", ["book_id"], name: "index_books_shelves_on_book_id"
+  add_index "books_shelves", ["shelf_id"], name: "index_books_shelves_on_shelf_id"
 
   create_table "shelves", force: :cascade do |t|
     t.string   "shelf_name"
