@@ -4,7 +4,7 @@
 	<%= form.text_field :book_name, placeholder: 'Name' %><br>
 	<%= form.text_field :book_author, placeholder: 'Author' %><br>
 	<%= form.text_field :notes, placeholder: 'Notes' %><br>
-	<%= collection_select(:book, :shelves, Shelf.all, :id, :shelf_name, {}) %>
+	<%= collection_select(:book, :shelves, Shelf.all, :id, :shelf_name, {}, { name: 'shelf_id'}) %>
 	<%= form.submit %> 
 <% end %>
 <button><%= link_to "Go Back", root_path %></button>

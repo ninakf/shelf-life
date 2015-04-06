@@ -1,4 +1,9 @@
 class BooksController < ApplicationController
+	before_action :authenticate_user!
+
+	def index
+		@books = Book.all
+	end
 
 	def new
 		@book = Book.new
@@ -9,6 +14,7 @@ class BooksController < ApplicationController
 		@book = Book.new(book_params)
 
 		if @book.save
+			BooksShelves.create(book_id: @book.id, shelf_id: params[:shelf_id])
 			redirect_to '/'
 		else 
 			render :new
@@ -21,7 +27,7 @@ class BooksController < ApplicationController
 
 	def book_params
 		params.require(:book).permit(
-			:book_name, :book_author, :description
-			)
+			:book_name, :book_author, :notes
+		)
 	end
 end

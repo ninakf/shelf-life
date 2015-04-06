@@ -22,7 +22,7 @@ class ShelvesController < ApplicationController
 
 	def show
 		@shelf = Shelf.find(params[:id])
-		@books = Book.all
+		@books = @shelf.books
 	end
 
 	def edit 
