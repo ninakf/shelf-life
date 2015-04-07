@@ -2,4 +2,6 @@
 <p><%= @book.book_author %></p>
 <p><%= @book.notes %></p>
 
-<button><%= link_to "Go Back", root_path %></button>
+<button><%= link_to "Edit Book", edit_book_path %></button>
+
+<button><%= link_to "Go Back", :back %></button>

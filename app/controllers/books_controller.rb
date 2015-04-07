@@ -23,7 +23,22 @@ class BooksController < ApplicationController
 
 	def show
 		@book = Book.find(params[:id])
+		@shelves = current_user.shelves
 	end
+
+	def edit 
+  		@book = current_user.books.find(params[:id])
+  	end
+
+  	def update 
+  		@book = current_user.books.find(params[:id])
+
+  		if @book.update_attributes(book_params)
+  		redirect_to '/'
+  		else 
+  		render :edit
+  		end
+  	end
 
 	def book_params
 		params.require(:book).permit(
