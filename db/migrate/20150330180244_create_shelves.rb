@@ -3,7 +3,7 @@ class CreateShelves < ActiveRecord::Migration
     create_table :shelves do |t|
       t.string :shelf_name
       t.string :description
-      t.references :user, index: true
+      t.integer :user_id, index: true
 
       t.timestamps null: false
     end
