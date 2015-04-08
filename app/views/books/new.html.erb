@@ -4,7 +4,6 @@
 	<%= form.input :book_name, placeholder: 'Name' %>
 	<%= form.input :book_author, placeholder: 'Author' %>
 	<%= form.input :notes, placeholder: 'Notes' %>
-<!-- 	<%= collection_select(:book, :shelves, current_user.shelves, :id, :shelf_name, {}, { name: 'shelf_id'}) %> -->
 	<%= form.association :shelves, as: :check_boxes, label_method: :shelf_name %>
 	<%= form.button :submit %> 
 <% end %>

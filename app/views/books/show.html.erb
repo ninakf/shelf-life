@@ -1,7 +1,12 @@
 <h2><%= @book.book_name %></h2>
-<p><%= @book.book_author %></p>
-<p><%= @book.notes %></p>
-
+<p>Author:<br>
+<%= @book.book_author %></p>
+<p>Notes:<br>
+<%= @book.notes %></p>
+<p>Shelf:<br>
+<% @book.shelves.each do |shelf| %>
+	<%= shelf.shelf_name %><br>
+<% end %></p>
 <button><%= link_to "Edit Book", edit_book_path %></button>
 
 <button><%= link_to "Go Back", :back %></button>
