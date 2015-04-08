@@ -1,10 +1,10 @@
 <h2><%= @book.book_name %></h2>
-<p>Author:<br>
-<%= @book.book_author %></p>
-<p>Notes:<br>
-<%= @book.notes %></p>
-<p>Shelf:<br>
-<% @book.shelves.each do |shelf| %>
+<h5>Author</h5>
+<p><%= @book.book_author %></p>
+<h5>Notes</h5>
+<p><%= @book.notes %></p>
+<h5>Shelf</h5>
+<p><% @book.shelves.each do |shelf| %>
 	<%= shelf.shelf_name %><br>
 <% end %></p>
 <button><%= link_to "Edit Book", edit_book_path %></button>
