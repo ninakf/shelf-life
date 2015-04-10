@@ -4,10 +4,7 @@
 	<%= form.input :book_name, placeholder: 'Name' %>
 	<%= form.input :book_author, placeholder: 'Author' %>
 	<%= form.input :notes, placeholder: 'Notes' %>
-	<%= form.association :shelves, as: :check_boxes, label_method: :shelf_name %>
+	<%= form.association :shelves, as: :check_boxes, :collection => @shelves, label_method: :shelf_name, value_method: :id %>
 	<%= form.button :submit %> 
-<% end %>
-
+<% end %><br>
 <button><%= link_to "Go Back", book_path %></button>
-
-

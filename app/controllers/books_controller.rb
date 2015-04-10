@@ -12,6 +12,7 @@ class BooksController < ApplicationController
 
 	def create 
 		@book = Book.new(book_params)
+		@shelves = current_user.shelves
 
 		if @book.save
 			BooksShelves.create(book_id: @book.id, shelf_id: params[:shelf_id])
@@ -28,10 +29,12 @@ class BooksController < ApplicationController
 
 	def edit 
   		@book = current_user.books.find(params[:id])
+  		@shelves = current_user.shelves
   	end
 
   	def update 
   		@book = current_user.books.find(params[:id])
+  		@shelves = current_user.shelves
 
   		if @book.update_attributes(book_params)
   		redirect_to '/'
