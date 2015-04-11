@@ -1,0 +1,8 @@
+<h2>Edit Shelf</h2>
+
+<%= simple_form_for @shelf do |form| %>
+	<%= form.input :shelf_name, placeholder: 'Name' %>
+	<%= form.input :description, placeholder: 'Description' %><br>
+	<%= form.button :submit %>
+<% end %><br>
+<button><%= link_to "Go Back", shelf_path %></button>
