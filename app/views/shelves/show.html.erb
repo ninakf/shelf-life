@@ -5,6 +5,6 @@
 	<%= link_to book.book_name, book_path(book) %><br>
 <% end %><br>
 <button><%= link_to "Edit Shelf", edit_shelf_path %></button>
-
-<button><%= link_to "Go Back", root_path %></button>
+<button><%= link_to "Delete Shelf", @shelf, method: :delete %></button>
+<button><%= link_to "Go Back", :back %></button>
 

@@ -39,6 +39,12 @@ class ShelvesController < ApplicationController
   	end
   	end
 
+  	def destroy
+  		@shelf = Shelf.find(params[:id])
+  		@shelf.destroy
+  		redirect_to '/'
+	end
+
   	private
 
 	def shelf_params

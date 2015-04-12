@@ -8,5 +8,5 @@
 	<%= shelf.shelf_name %><br>
 <% end %></p>
 <button><%= link_to "Edit Book", edit_book_path %></button>
-
+<button><%= link_to "Delete Book", @book, method: :delete %></button>
 <button><%= link_to "Go Back", :back %></button>
