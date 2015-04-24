@@ -1,3 +1,3 @@
 class Book < ActiveRecord::Base
-	has_and_belongs_to_many :shelves
+	has_and_belongs_to_many :shelves, :uniq => true
 end

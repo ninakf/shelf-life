@@ -1,10 +1,6 @@
 class BooksController < ApplicationController
 	before_action :authenticate_user!
 
-	def index
-		@books = current_user.books
-	end
-
 	def new
 		@book = Book.new
 		@shelves = current_user.shelves
@@ -41,6 +37,10 @@ class BooksController < ApplicationController
   		else 
   		render :edit
   		end
+  	end
+
+  	def index
+  		@books = current_user.books
   	end
 
   	def destroy
