@@ -3,7 +3,7 @@
 <p><%= @book.book_author %></p>
 <h5>Notes</h5>
 <p><%= @book.notes %></p>
-<h5>Shelf</h5>
+<h5>Shelves</h5>
 <p><% @book.shelves.each do |shelf| %>
 	<%= shelf.shelf_name %><br>
 <% end %></p>
